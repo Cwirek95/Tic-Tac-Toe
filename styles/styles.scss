@@ -1,0 +1,204 @@
+$shadow-color: #000000;
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(130deg, #e76f51, #2a9d8f);
+    background-size: 300% 300%;
+    animation: BackgroundGradient 25s ease infinite;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    width: 18%;
+    flex-grow: 3;
+    justify-content: start;
+    align-items: center;
+    background-color: #303030;
+    border-radius: 92% 8% 77% 23% / 25% 18% 82% 75% ;
+    opacity: 0.8;
+
+    h1 {
+        font-family: 'Rock Salt', cursive;
+        color: #FFFFFF;
+        font-size: 1.5em;
+        letter-spacing: 0.3em;
+        margin-left: 10%;
+    }
+}
+
+.main-content {
+    display: flex;
+    flex-grow: 6;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    font-size: 3em;
+
+    h5 {
+        font-family: 'Permanent Marker', cursive;
+        font-size: 1.5em;
+        flex-grow: 1;
+        opacity: 0.5;
+    }
+
+    span {
+        flex-grow: 6;
+        font-size: 5em;
+        color: #FFFFFF;
+        opacity: 0.5;
+        text-shadow: 1px 1px 1px $shadow-color, -2px 1px 1px $shadow-color, -3px 1px 1px $shadow-color, -4px 1px 1px $shadow-color,-4px 1px 1px $shadow-color,
+        -5px 1px 1px $shadow-color,-6px 1px 1px $shadow-color,-7px 1px 1px $shadow-color,-8px 1px 1px $shadow-color,-9px 1px 1px $shadow-color,-10px 1px 1px $shadow-color,
+        -11px 1px 1px $shadow-color,-12px 1px 1px $shadow-color,-13px 1px 1px $shadow-color,-14px 1px 1px $shadow-color,-15px 1px 1px $shadow-color,-16px 1px 1px $shadow-color;
+        transform: rotateY(-20deg);
+    }
+}
+
+.middle {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-turn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 20%;
+    height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid #000000;
+    border-width: 3px 3px 5px 5px;
+    border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
+    transform: rotate(0deg);
+    opacity: 0.6;
+
+    h5 {
+        font-size: 1.5em;
+        letter-spacing: 0.1em;
+    }
+
+    span {
+        font-family: 'Permanent Marker', cursive;
+        font-size: 2.5em;
+    }
+}
+
+.game-field {
+    display: grid;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px;
+    grid-gap: 10px;
+
+    .field-item {
+        font-family: 'Permanent Marker', cursive;
+        font-size: 8em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        -webkit-transition: all ease 0.5s;
+        transition: all ease 0.5s;
+        background-color: #f5ebe0;
+        opacity: 0.9;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+.new-game-btn {
+    margin-top: 3%;
+    width: 20%;
+    height: 30px;
+    font-weight: 500;
+    background-color: #000000;
+    color: #FFFFFF;
+	border: 1px solid #000000;
+	border-radius: 30px 10px;
+	letter-spacing: .3em;
+	transition: all .7s ease;
+    cursor: pointer;
+    opacity: 0.8;
+
+    &:hover {
+        border-radius: 10px 30px;
+		background-color: #FFFFFF;
+        color: #000000;
+		letter-spacing: .3em;
+        opacity: 0.8;
+    }
+}
+
+
+// Footer
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 3;
+
+    span {
+        margin-left: 5px;
+        color: #FFFFFF;
+        font-size: 1rem;
+        opacity: 0.5;
+    }
+
+    .social-icons {
+        display: flex;
+        list-style: none;
+        margin-right: 30px;
+        gap: 30px;
+
+        li {
+            transform: scale(2);
+            opacity: 0.5;
+            -webkit-transition: all ease 0.5s;
+            transition: all ease 0.5s;
+
+            &:hover {
+                opacity: 1;
+                transform: scale(2.5)
+            }
+        }
+
+        a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+    }
+}
+
+
+// Animation
+@keyframes BackgroundGradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }

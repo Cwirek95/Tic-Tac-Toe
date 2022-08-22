@@ -1,4 +1,10 @@
+// Variables
 $shadow-color: #000000;
+$dark: #000000;
+$white: #FFFFFF;
+$field-color: #f5ebe0;
+$background1: #e76f51;
+$background2: #2a9d8f;
 
 
 * {
@@ -14,31 +20,13 @@ body {
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(130deg, #e76f51, #2a9d8f);
+    background: linear-gradient(130deg, $background1, $background2);
     background-size: 300% 300%;
     animation: BackgroundGradient 25s ease infinite;
     position: relative;
 }
 
-.header {
-    display: flex;
-    width: 18%;
-    flex-grow: 3;
-    justify-content: start;
-    align-items: center;
-    background-color: #303030;
-    border-radius: 92% 8% 77% 23% / 25% 18% 82% 75% ;
-    opacity: 0.8;
-
-    h1 {
-        font-family: 'Rock Salt', cursive;
-        color: #FFFFFF;
-        font-size: 1.5em;
-        letter-spacing: 0.3em;
-        margin-left: 10%;
-    }
-}
-
+// Main content
 .main-content {
     display: flex;
     flex-grow: 6;
@@ -66,7 +54,7 @@ body {
     span {
         flex-grow: 6;
         font-size: 5em;
-        color: #FFFFFF;
+        color: $white;
         opacity: 0.5;
         text-shadow: 1px 1px 1px $shadow-color, -2px 1px 1px $shadow-color, -3px 1px 1px $shadow-color, -4px 1px 1px $shadow-color,-4px 1px 1px $shadow-color,
         -5px 1px 1px $shadow-color,-6px 1px 1px $shadow-color,-7px 1px 1px $shadow-color,-8px 1px 1px $shadow-color,-9px 1px 1px $shadow-color,-10px 1px 1px $shadow-color,
@@ -91,7 +79,7 @@ body {
     width: 25%;
     height: 50px;
     margin-bottom: 20px;
-    border: 1px solid #000000;
+    border: 1px solid $dark;
     border-width: 3px 3px 5px 5px;
     border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
     transform: rotate(0deg);
@@ -123,7 +111,7 @@ body {
         cursor: pointer;
         -webkit-transition: all ease 0.5s;
         transition: all ease 0.5s;
-        background-color: #f5ebe0;
+        background-color: $field-color;
         opacity: 0.9;
 
         &:hover {
@@ -137,9 +125,9 @@ body {
     width: 30%;
     height: 50px;
     font-weight: 500;
-    background-color: #000000;
-    color: #FFFFFF;
-	border: 1px solid #000000;
+    background-color: $dark;
+    color: $white;
+	border: 1px solid $dark;
 	border-radius: 30px 10px;
 	letter-spacing: .3em;
 	transition: all .7s ease;
@@ -148,8 +136,8 @@ body {
 
     &:hover {
         border-radius: 10px 30px;
-		background-color: #FFFFFF;
-        color: #000000;
+		background-color: $white;
+        color: $dark;
 		letter-spacing: .3em;
         opacity: 0.8;
     }
@@ -165,7 +153,7 @@ body {
 
     span {
         margin-left: 5px;
-        color: #FFFFFF;
+        color: $white;
         font-size: 1em;
         opacity: 0.5;
     }
@@ -188,9 +176,65 @@ body {
         }
 
         a {
-            color: #FFFFFF;
+            color: $white;
             text-decoration: none;
         }
+    }
+}
+
+// Win section
+.winner-container {
+    display: none;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(100, 100, 100, 0.9);
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 100;
+  }
+
+.display-winner {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+
+    .winner-info {
+        font-family: 'Permanent Marker', cursive;
+        font-size: 8em;
+    }
+
+    h3 {
+        font-size: 4em;
+        margin-bottom: 40px;
+    }
+}
+
+.continue-btn {
+    display: block;
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    width: 20%;
+    height: 50px;
+    font-size: 1.3em;
+    font-weight: 600;
+    background-color: $dark;
+    color: $white;
+	border: 1px solid $dark;
+	border-radius: 30px 10px;
+	letter-spacing: .3em;
+	transition: all .7s ease;
+    cursor: pointer;
+    opacity: 0.8;
+
+    &:hover {
+        border-radius: 10px 30px;
+		background-color: $white;
+        color: $dark;
     }
 }
 
@@ -318,6 +362,11 @@ body {
         width: 50%;
         margin-top: 20%;
     }
+
+    .continue-btn {
+        font-size: 0.9em;
+    }
+
 }
 
 @media only screen and (max-width:1000px)  and (min-height: 1000px) {
@@ -413,6 +462,11 @@ body {
 
     .footer {
         font-size: 0.8em;
+    }
+
+    .continue-btn {
+        width: 30%;
+        font-size: 0.6em;
     }
 }
 

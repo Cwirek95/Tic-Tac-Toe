@@ -19,13 +19,12 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/bd2d3af33f.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <header class="header">
-        <h1>Tic Tac Toe</h1>
-    </header>
+    <!-- Main section -->
     <main class="main-content">
-        <div class="player">
+        <div class="player" id="playerO">
             <h5>O</h5>
             <span>0</span>
         </div>
@@ -35,26 +34,18 @@
                 <span>O</span>
             </div>
             <div class="game-field">
-                <div class="field-item" data-number="1">X</div>
-                <div class="field-item" data-number="2"></div>
-                <div class="field-item" data-number="3">O</div>
-                <div class="field-item" data-number="4"></div>
-                <div class="field-item" data-number="5"></div>
-                <div class="field-item" data-number="6"></div>
-                <div class="field-item" data-number="7"></div>
-                <div class="field-item" data-number="8"></div>
-                <div class="field-item" data-number="9"></div>
             </div>
             <button class="new-game-btn">NEW GAME</button>
         </div>
-        <div class="player">
+        <div class="player" id="playerX">
             <h5>X</h5>
-            <span>2</span>
+            <span>0</span>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
-        <span>@ 2022 By Cwirek95</span>
+        <span>&copy; 2022 By Cwirek95</span>
         <ul class="social-icons">
             <li>
                 <a href="https://github.com/Cwirek95" target="_blank"><i class="fab fa-github"></i></a>
@@ -70,5 +61,15 @@
             </li>
         </ul>
     </footer> 
+
+    <!-- Win section -->
+    <section class="winner-container">
+        <h1 class="winner-info"></h1>
+        <h3 class="winner-info-h3"></h3>
+        <button class="continue-btn">Continue</button>
+    </section>
+
+    <!-- Scripts -->
+    <script type="module" src="scripts/js/Main.js"></script>
 </body>
 </html>
